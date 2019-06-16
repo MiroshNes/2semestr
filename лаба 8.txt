@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+class First
+{
+    protected:
+    int value;
+    public:
+    First (int value)
+    {
+        this->value=value;
+        cout<<value<<endl;
+    }
+    
+};
+class Second : public First
+{
+    public:
+    Second(int val) : First(val)
+    {
+        
+    }
+};
+class Third : public First
+{
+    public:
+    Third(int val) : First(val)
+    {
+        
+    }
+};
+
+int main()
+{
+    Second obj(20);
+    Third object(15);
+    return 0;
+}
