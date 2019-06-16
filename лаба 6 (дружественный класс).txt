@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+class First_player;
+class Second_player 
+{
+    friend class First_player;
+    private:
+    int health=5;
+};
+class First_player 
+{
+    public:
+    void damage(Second_player &a)
+    {
+        a.health-=1;
+        cout<<"health of the second player is "<<a.health<<endl;
+    }
+    void kill(Second_player &a)
+    {
+        a.health=0;
+        cout<<"health of the second player is "<<a.health<<endl;
+    }
+    void heal(Second_player &a)
+    {
+        a.health+=1;
+        cout<<"health of the second player is "<<a.health<<endl;
+    }
+};
+
+int main()
+{
+    Second_player Alex;
+    First_player Michael;
+    Michael.damage(Alex);
+    Michael.kill(Alex);
+    Michael.heal(Alex);
+    return 0;
+}

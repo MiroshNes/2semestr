@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+class b;
+class a 
+{
+    friend int sum(a,b);
+    private:
+    int i;
+    public:
+    a()
+    {
+        cout<<"enter i: ";
+        cin>>i;
+    }
+};
+class b 
+{
+    friend int sum(a,b);
+    private:
+    int j;
+    public:
+    b()
+    {
+        cout<<"enter j: ";
+        cin>>j;
+    }
+};
+int sum (a first,b second)
+{
+    return (first.i+second.j);
+}
+int main()
+{
+    a first;
+    b second;
+    cout<<sum(first, second)<<endl;
+    cin.get();
+    return 0;
+}
