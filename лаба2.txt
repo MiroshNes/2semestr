@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+class House
+{
+    public: 
+    int building,appt;
+House()//конструктор по умолчанию
+{
+    cout<<"конструктор"<<endl;
+    building=60;
+    appt=8;
+    get();
+    cout<<endl;
+}
+House(int date_building,int date_appt)  //конструктор с параметрами
+{
+    building=date_building;
+    appt=date_appt;
+    get();
+    cout<<endl;
+}  
+House (const House &obj)   //конструктор копирования
+{
+    building=obj.building;
+    appt=obj.appt;
+}
+~House() //деструктор
+{
+    cout<<"деструктор"<<endl;
+}
+   
+    void set(int date_building,int date_appt)
+    {
+    building=date_building;
+    appt=date_appt;
+    }
+    void get()
+    {
+    cout<<"building of this house-"<<building<<", appt is-"<<appt<<endl;
+    }
+ };
+int main ()
+{
+    House obj1;
+    House*obj2=new House();
+    cout<<obj2->building<<" "<<obj2->appt<<endl;
+    delete obj2;
+    cout<<obj2->building<<endl;
+    
+    House university;
+    university.set(24,1);
+    university.get();
+    
+    House shop;
+    shop.set(187,2);
+    shop.get();
+    setlocale(LC_ALL,"rus");
+    cin.get();
+    return 0;
+
+} 

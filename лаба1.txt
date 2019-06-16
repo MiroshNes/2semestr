@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+class House
+{
+    private:
+    int building,appt;
+    public: 
+    void message()
+    {
+    cout<<"class is working"<<endl; 
+    }
+    void set(int date_building,int date_appt)
+    {
+    building=date_building;
+    appt=date_appt;
+    }
+    void get()
+    {
+    cout<<"building of this house-"<<building<<", appt is-"<<appt<<endl;
+    }
+ };
+int main ()
+{
+House university;
+university.message();
+university.set(24,1);
+university.get();
+
+House shop;
+shop.message();
+shop.set(187,2);
+shop.get();
+cin.get();
+return 0;
+
+} 
