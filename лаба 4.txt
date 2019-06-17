@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+class Account
+{
+    public:
+    Account(double sum)
+    {
+        this->sum=sum;
+    }
+    static int getRate()
+    {
+        return rate;
+    }
+    static void setRate(int r)
+    {
+        rate=r;
+    }
+    double getIncome()
+    {
+        return sum+sum*rate/100;
+    }
+    private:
+    double sum;
+    static int rate;
+};
+int Account::rate=8;
+int main()
+{
+    Account first(20000);
+    Account second(50000);
+    Account::setRate(5);
+    std::cout<<"rate: "<<Account::getRate()<<std::endl;
+    std::cout<<"rate: "<<first.getRate()<<"income: "<<first.getIncome()<<std::endl;
+    std::cout<<"rate: "<<second.getRate()<<"income: "<<second.getIncome()<<std::endl;
+    return 0;
+}
